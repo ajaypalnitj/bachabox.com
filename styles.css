@@ -56,3 +56,28 @@ p {
         font-size: 1rem;
     }
 }
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.social-icons a {
+    color: #666;
+    font-size: 1.8rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #87CEEB;
+}
+
+.fa-youtube:hover {
+    color: #FF0000;
+}
+
+.fa-instagram:hover {
+    color: #E4405F;
+}
