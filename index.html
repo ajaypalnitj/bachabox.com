@@ -63,13 +63,60 @@
         
         <div class="newsletter">
             <p class="subscribe-text">Stay updated with our launch and early access opportunities!</p>
-            <form class="subscribe-form" action="https://formspree.io/f/mgvodaga" method="POST">
-                <input type="email" name="email" placeholder="Enter your email" required>
-                <input type="hidden" name="_subject" value="New BachaBox Subscriber!">
-                <input type="hidden" name="_next" value="https://bachabox.com/thanks.html">
-                <button type="submit">Notify Me</button>
+            <form class="subscribe-form" id="email-form">
+                <input type="email" name="email" id="email-input" placeholder="Enter your email" required>
+                <button type="submit" id="submit-btn">Notify Me</button>
             </form>
+            <p id="status-message" style="display: none; margin-top: 1rem; font-size: 0.9rem;"></p>
         </div>
     </div>
+
+    <script>
+        const form = document.getElementById('email-form');
+        const statusMessage = document.getElementById('status-message');
+        const submitButton = document.getElementById('submit-btn');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email-input').value;
+            
+            submitButton.disabled = true;
+            submitButton.textContent = 'Subscribing...';
+            
+            try {
+                const response = await fetch('https://script.google.com/macros/s/AKfycbyT7SMoC2ydyzjBlIEaF0bIkmTODh0L-tGMsTamcz8bXZF7AsdZsyCab4e6t8YAmeHAFQ/exec', {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email: email })
+                });
+
+                statusMessage.style.display = 'block';
+                statusMessage.style.color = '#28a745';
+                statusMessage.textContent = 'Thank you for subscribing!';
+                form.reset();
+                
+                // Check if we're on GitHub Pages or local
+                const isGitHubPages = window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
+                const thanksPath = isGitHubPages ? '/thanks.html' : './thanks.html';
+                
+                // Redirect after successful submission
+                setTimeout(() => {
+                    window.location.href = thanksPath;
+                }, 1500);
+
+            } catch (error) {
+                statusMessage.style.display = 'block';
+                statusMessage.style.color = '#dc3545';
+                statusMessage.textContent = 'Oops! Something went wrong. Please try again.';
+                console.error('Submission error:', error);
+            } finally {
+                submitButton.disabled = false;
+                submitButton.textContent = 'Notify Me';
+            }
+        });
+    </script>
 </body>
 </html>
