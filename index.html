@@ -3,9 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BachaBox - Coming Soon</title>
+    <title>BachaBox - Creative Learning for Kids | Coming Soon</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="BachaBox - Your child's gateway to creative learning through rhymes, activities, and educational content. Join us for a magical journey of learning and fun!">
+    <meta name="keywords" content="BachaBox, children education, kids learning, creative activities, rhymes, educational content">
+    <meta name="author" content="BachaBox">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bachabox.com/">
+    <meta property="og:title" content="BachaBox - Creative Learning for Kids">
+    <meta property="og:description" content="Your child's gateway to creative learning through rhymes, activities, and educational content.">
+    <meta property="og:image" content="logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://bachabox.com/">
+    <meta property="twitter:title" content="BachaBox - Creative Learning for Kids">
+    <meta property="twitter:description" content="Your child's gateway to creative learning through rhymes, activities, and educational content.">
+    <meta property="twitter:image" content="logo.png">
+
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HYYKE3L0CW"></script>
@@ -21,16 +42,33 @@
 <body>
     <div class="container">
         <img src="logo.png" alt="BachaBox Logo" class="logo">
-        <h1>Coming Soon</h1>
-        <p>Get ready for a magical world of rhymes and creative activities for your little ones!</p>
+        <h1>Something Magical is Coming!</h1>
+        <p class="tagline">Get ready to embark on an enchanting journey of learning and creativity!</p>
+        <p class="description">We're crafting a wonderful world of rhymes, stories, and engaging activities that will spark your little one's imagination and foster their growth.</p>
         
         <div class="social-icons">
-            <a href="https://www.youtube.com/@bacha_box" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.youtube.com/@bacha_box" target="_blank" rel="noopener noreferrer" aria-label="Follow us on YouTube">
                 <i class="fab fa-youtube"></i>
             </a>
-            <a href="https://instagram.com/bacha_box" target="_blank" rel="noopener noreferrer">
+            <a href="https://instagram.com/bacha_box" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
                 <i class="fab fa-instagram"></i>
             </a>
+            <a href="https://www.facebook.com/bachabox01" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://x.com/bachabox" target="_blank" rel="noopener noreferrer" aria-label="Follow us on X (Twitter)">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+        </div>
+        
+        <div class="newsletter">
+            <p class="subscribe-text">Stay updated with our launch and early access opportunities!</p>
+            <form class="subscribe-form" action="https://formspree.io/f/mgvodaga" method="POST">
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <input type="hidden" name="_subject" value="New BachaBox Subscriber!">
+                <input type="hidden" name="_next" value="https://bachabox.com/thanks.html">
+                <button type="submit">Notify Me</button>
+            </form>
         </div>
     </div>
 </body>
